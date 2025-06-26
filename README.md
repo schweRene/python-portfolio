@@ -4,5 +4,4 @@ Files: Stundenerfassung.py
 Libraries: Datetime, calendar
 
 Author: René
-LinkedIn:
-GitHub: 
+ 
