@@ -1,15 +1,19 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, make_response
 import json
 import os
+from dotenv import load_dotenv
+
 from daten import (vorname, nachname, straße, plz_ort, telefon, email,
                    ort_datum, softskills, linkedin, berufserfahrung, praktika, zertifikate,
                    anschreiben, deckblatt_titel)
 
 
 app = Flask(__name__)
-app.secret_key = 'werderbremen1899'
 
-ADMIN_PASSWORD = "werderbremen1899"
+
+load_dotenv()
+app.secret_key = os.getenv("app.secret_key")
+ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD")
 
 @app.route("/view_anschreiben")
 def view_anschreiben():
