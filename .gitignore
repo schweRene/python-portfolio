@@ -1,0 +1,12 @@
+# Admin-Dateien ausschließen (nicht hochladen)
+templates/admin_login.html
+templates/admin_panel.html
+
+# Persönliche Daten ausschließen
+daten.json
+
+# Python-Cache und virtuelle Umgebung ausschließen
+__pycache__/
+*.pyc
+venv/
+.env

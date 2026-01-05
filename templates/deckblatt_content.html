@@ -1,0 +1,25 @@
+<div class="page">
+    <div class="deckblatt-container">
+            <div class="farbrand"></div>    
+            
+            <div class="content">
+
+                <img src="{{ url_for('static', filename='Bewerbungsfoto2.jpg') }}" alt="Bewerbungsfoto" class="foto">
+
+                <h1 class="titel">
+                    Bewerbung<br>
+                    als<br>
+                    {{ deckblatt_titel | replace("Bewerbung als ", "") }}
+                </h1>
+            </div>
+
+            <div class="anhaenge">
+                <h3>Anlagen</h3>
+                <ul>
+                    <li>Anschreiben</li>
+                    <li>Lebenslauf</li>
+                    <li>Zeugnisse/Zertifikate</li>
+                </ul>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,129 @@
+ 
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            align-items: flex-start;        /* oben beginnen – kein Scrollen, alles sichtbar */
+            justify-content: center;
+        }
+
+        .anschreiben-container {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm 20mm 20mm 20mm;   /* deine 80mm oben, links/rechts 20mm, unten 20mm */
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.2);
+            font-size: 11pt;
+            line-height: 1.5;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        .absender {
+            margin-bottom: 40pt;
+        }
+
+        .empfaenger {
+            margin-bottom: 30pt;
+        }
+
+        .ort-datum {
+            text-align: right;
+            margin-bottom: 15pt;
+        }
+
+        .betreff {
+            font-weight: bold;
+            font-size: 12pt;
+            margin-bottom: 15pt;
+        }
+
+        .anrede {
+            margin-bottom: 15pt;
+        }
+
+        .text p {
+            margin-bottom: 10pt;
+            text-align: justify;
+        }
+
+        .gruss {
+            margin-top: 20pt;
+        }
+
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 24px;
+            background: #1E90FF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        @media print {
+            body {                
+                background: white;
+                margin: 0;
+                padding: 0;
+            }
+            .anschreiben-container {
+                box-shadow: none;
+                margin: 0;
+                padding: 20mm 20mm 20mm 20mm;  /* deine Web-Abstände – alles auf einer Seite */ 
+                width: 210mm;
+                height: auto;
+                page-break-inside: always;               
+            }
+            .print-button { display: none; }
+        }
+
+/*==================== NavBar ============================*/
+.nav-bar {
+    background: #2c3e50;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-bar a:hover {
+    color: #00BFFF;    
+}
+
+.nav-bar a.active {
+    color: #e74c3c;
+    border-bottom: 3px solid #e74c3c;
+    padding-bottom: 5px;
+}
+
+@media print {
+    .anschreiben-container p {
+        line-height: 1.2 !important;
+        margin-bottom: 4mm !important;
+    }
+    .nav-bar { display: none;}
+}

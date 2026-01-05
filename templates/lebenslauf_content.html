@@ -1,0 +1,101 @@
+<div class="container">
+    <h1 style="color:red">PDF TEST OK</h1>
+
+            <!-- Oberes Drittel -->
+             <header class="header">
+                <div class="info">
+                    <h1>{{ vorname }} {{ nachname }}</h1>
+                    <p>{{ straße }}<br>{{ plz_ort }}</p>
+                    <p>{{ telefon }}<br></p>
+                        <a href="mailto: {{ email }}">{{ email }}</a><br>
+                    <span class="social-links">
+                        {% if linkedin %}
+                         <a href="{{ linkedin }}" target=""_blank" rel=https://www.linkedin.com/in/rené-schwemer-786b48266/>LinkedIn</a>
+                        {% endif %}
+                    </span>
+                </div>
+
+                <div class="foto">
+                    <img src="{{ url_for('static', filename='Bewerbungsfoto2.jpg') }}" alt="Foto">
+                </div>
+
+                <div class="softskills">
+                    <h3>Softskills</h3>
+                    <ul class="softskills-grid">
+                        {% for skill in softskills %}
+                            <li>{{ skill }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>                
+             </header>
+
+             <div class="spacer"></div>
+             
+             <!-- Hauptinhalt des Lebenslaufs -->
+              <main class="content">
+                
+                <section>
+                    <h2>Beruflicher Werdegang</h2>
+                    {% for job in berufserfahrung %}
+                    <div class="job-entry">
+                        <table class="cv-table">
+                            <tr>
+                                <td class="zeit">{{ job.zeit }}</td>
+                                <td>
+                                    <strong class="position">{{ job.position }}</strong><br>
+                                    <span class="firma">{{ job.firma }}</span>
+
+                                    {% if job.aufgaben %}
+                                    <ul class="aufgaben">
+                                        {% for aufgabe in job.aufgaben %}
+                                        <li>{{ aufgabe }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        </table>   
+                        
+                    </div>
+                    {% endfor %}
+                </section>
+
+                <section>
+                    <h2>Praktika</h2>
+                    <table id="praktika-table" class="cv-table">
+                        {% for praktikum in praktika %}
+                        <tr>
+                            <td class="zeit">{{ praktikum.zeit }}</td>
+                            <td>
+                                <strong>{{ praktikum.position }}</strong><br>
+                                <span class="firma">{{ praktikum.firma }}</span>
+
+                                {% if praktikum.aufgaben %}
+                                   <ul class="aufgaben">
+                                       {% for aufgabe in praktikum.aufgaben %}
+                                        <li>{{ aufgabe }}</li>
+                                       {% endfor %}
+                                   </ul>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </section>
+
+                <section>
+                    <h2>Zertifikate</h2>
+                    <ul class="zertifikate">
+                        {% for zertifikat in zertifikate %}
+                        <li>{{ zertifikat }}</li>
+                        {% endfor %}
+                    </ul>
+                </section>                
+              </main>
+              <!-- Unterer Teil für die Unterschrift -->
+              <div class="ort-datum">{{ ort_datum }}</div>
+              <div class="signatur-space"></div>
+              <div class="linie"></div>  
+              <div class="name">{{ vorname }} {{ nachname }}</div>
+              
+        </div>

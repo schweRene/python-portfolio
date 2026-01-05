@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anschreiben</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='rene.png') }}" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='anschreibenstyle.css') }}">
+   
+</head>
+<body>
+    {% include "navigation.html" %}
+    <div class="anschreiben-container">
+        <div class="absender">
+            {{ vorname }} {{ nachname }}<br>
+            {{ straße }}<br>
+            {{ plz_ort }}<br>
+            {{ email }}
+        </div>
+
+        <div class="empfaenger">
+            {{ anschreiben.firma_name }}<br>
+            {{ anschreiben.firma_strasse }}<br>
+            {{ anschreiben.firma_plz_ort }}
+        </div>
+
+        <div class="ort-datum">
+            {{ ort_datum }}
+        </div>
+
+        <div class="betreff">
+            {{ anschreiben.betreff }}
+        </div>
+
+        <div class="anrede">
+            {{ anschreiben.anrede }}
+        </div>
+
+        <div class="text">
+            {% for paragraph in anschreiben.text[:-1] %}
+                {% if paragraph.strip() %}
+                    <p>{{ paragraph }}</p>
+                {% else %}
+                    <p>&nbsp;</p>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="gruss">
+            {{ anschreiben.text[-1] }}<br>            
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,203 @@
+html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .deckblatt-container {
+            width: 210mm;
+            height: 297mm;
+            position: relative;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .farbrand {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60mm;
+            height: 100%;
+            background: #27ae60;
+        }
+
+        .content {
+            position: absolute;
+            left: 70mm;                     /* 60mm Rand + 10mm Sicherheitsabstand */
+            top: 0;
+            right: 40mm;
+            bottom: 60px;                   /* Platz für Anlagen unten (30px Abstand zum Rand + Inhalt) */
+            display: flex;
+            flex-direction: column;         /*neue Änderung*/
+            align-items: center;
+            justify-content: center;
+            padding-top: 80px;              /*neue Änderung */
+        }
+
+        .foto {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid white;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            margin-bottom: 50px;
+        }
+
+        .titel {
+            font-size: 42px;
+            font-weight: 700;
+            color: #2c3e50;
+            text-align: center;
+            line-height: 1.4;
+            margin: 0 0 50px 0;         /* neue Änderung */
+        }
+
+        .anhaenge {
+            position: absolute;
+            left: 70mm;                     /* gleicher linker Abstand wie Titel */
+            bottom: 30px;                   /* exakt 30px vom unteren Rand */
+            right: 40mm;
+        }
+
+        .anhaenge h3 {
+            margin: 0 0 3px 0;              /* nur 3px Abstand zur Liste – wie von dir gewünscht */
+            color: #2c3e50;
+            font-size: 24px;
+        }
+
+        .anhaenge ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .anhaenge li {
+            padding: 8px 0;
+            font-size: 18px;
+        }
+
+        .anhaenge li::before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .print-button { 
+            position: fixed; 
+            top: 80px; 
+            left: 20px; 
+            width: 120px;
+            height: 80px;
+            padding: 12px 24px;
+            background: #1E90FF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            z-index: 1000; 
+        }
+
+        /* PDF-sicher */
+    @media print {
+        html, body {
+            display: block !important;
+            background: white !important;
+            margin: 0;
+            padding: 0;
+        }
+
+        .deckblatt-container {
+            position: relative !important;
+            width: 210mm !important;
+            height: 297mm !important;
+            padding: 20mm !important;
+            box-shadow: none !important;
+            overflow: visible !important;
+        }
+
+        .farbrand {
+            position: absolute !important;
+            left: 0 !important;
+            top: 0 !important;
+            width: 60mm !important;
+            height: 100% !important;
+            background: #27ae60 !important;
+        }
+
+        .content {
+            position: static !important;       /* block-flow für PDF */
+            display: block !important;
+            margin-left: 70mm !important;      /* Abstand vom linken Rand */
+            margin-right: 40mm !important;
+            text-align: center;
+            padding-top: 20mm !important;
+            padding-bottom: 20mm !important;
+        }
+
+        .foto {
+            width: 40mm !important;            /* PDF-Größe */
+            height: 40mm !important;
+            border-radius: 50% !important;
+            object-fit: cover !important;
+            border: 2mm solid white !important;
+            margin-bottom: 10mm !important;
+        }
+
+        .titel {
+            font-size: 28pt !important;
+            line-height: 1.2 !important;
+            margin-bottom: 10mm !important;
+        }
+
+        .anhaenge {
+            position: static !important;
+            margin-top: 10mm !important;
+        }
+    }
+        
+/*==================== NavBar ============================*/
+.nav-bar {
+    background: #2c3e50;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-bar a:hover {
+    color: #00BFFF;    
+}
+
+.nav-bar a.active {
+    color: #e74c3c;
+    border-bottom: 3px solid #e74c3c;
+    padding-bottom: 5px;
+}
+
+@media print {
+    .nav-bar { display: none;}
+}

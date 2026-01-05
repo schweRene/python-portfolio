@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deckblatt</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='rene.png') }}" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='deckblattstyle.css') }}">
+    
+</head>
+<body>
+    {% include "navigation.html" %}
+    
+    <div class="deckblatt-container">
+        <div class="farbrand"></div>    
+        
+        <div class="content">
+
+            <img src="{{ url_for('static', filename='Bewerbungsfoto2.jpg') }}" alt="Bewerbungsfoto" class="foto">
+
+            <h1 class="titel">
+                Bewerbung<br>
+                als<br>
+                {{ deckblatt_titel | replace("Bewerbung als ", "") }}
+            </h1>
+        </div>
+
+        <div class="anhaenge">
+            <h3>Anlagen</h3>
+            <ul>
+                <li>Anschreiben</li>
+                <li>Lebenslauf</li>
+                <li>Zeugnisse/Zertifikate</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

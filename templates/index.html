@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>René Schwemer - Junior Softwareentwickler</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='rene.png') }}" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #f5f5fa 0%, #c3cfe2 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(44, 62, 80, 0.9);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero {
+          max-width: 800px;
+          margin: 0 auto;  
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin: 0 0 10px 0;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin: 0px;
+            opacity: 0.9;
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+        }
+
+        .cards-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .card-header {
+            background: #27ae60;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .card-body {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .card-body p{
+            margin: 0 0 25px 0;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #2c3e80;
+            color: white;
+            /*margin-top: 5px;*/
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+            /*justify-content: center;*/
+            
+        }
+
+        .btn:hover {
+            background: #1a252f;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #2c3e80;
+            color: white;
+            font-size: 14px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hero">
+            <img src="{{ url_for('static', filename='Bewerbungsfoto2.jpg') }}" alte="René Schwemer" class="profile-photo">
+            <h1>René Schwemer</h1>
+            <p>Junior Softwareentwickler</p>
+        </div>
+    </header>
+
+    <div class="cards-container">
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-header">Deckblatt</div>
+                <div class="card-body">
+                    <p>Deckblatt</p>
+                    <a href="/deckblatt" class="btn">Ansehen</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Anschreiben</div>
+                <div class="card-body">
+                    <p>Bewerbungsschreiben</p>
+                    <a href="/view_anschreiben" class="btn">Ansehen</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Lebenslauf</div>
+                <div class="card-body">
+                    <p>Detaillierter Werdegang</p>
+                    <a href="/lebenslauf" class="btn">Ansehen</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">GitHub</div>
+                <div class="card-body">
+                    <p>Meine Projekte auf GitHub</p>
+                    <a href="https://github.com/schweRene/python-portfolio" target="_blank" rel="noopener noreferrer" class="btn">Öffnen</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+       © 2026 René Schwemer - Junior Softwareentwickler | Hamburg 
+       <p>Auf Anfrage teile ich Ihnen gerne die Zugangsdaten für meine Arbeitszeugnisse und Zertifikate mit.</p>
+       <a href="{{ url_for('static', filename='zeugnisse/Zeugnisse.pdf') }}" target="_blank" class="btn">Arbeitszeugnisse</a>
+    </footer>
+</body>
+</html>

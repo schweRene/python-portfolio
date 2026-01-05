@@ -1,0 +1,41 @@
+<div class="anschreiben-container">
+
+        <div class="absender">
+            {{ vorname }} {{ nachname }}<br>
+            {{ straße }}<br>
+            {{ plz_ort }}<br>
+            {{ email }}
+        </div>
+
+        <div class="empfaenger">
+            {{ anschreiben.firma_name }}<br>
+            {{ anschreiben.firma_strasse }}<br>
+            {{ anschreiben.firma_plz_ort }}
+        </div>
+
+        <div class="ort-datum">
+            {{ ort_datum }}
+        </div>
+
+        <div class="betreff">
+            {{ anschreiben.betreff }}
+        </div>
+
+        <div class="anrede">
+            {{ anschreiben.anrede }}
+        </div>
+
+        <div class="text">
+            {% for paragraph in anschreiben.text[:-1] %}
+                {% if paragraph.strip() %}
+                    <p>{{ paragraph }}</p>
+                {% else %}
+                    <p>&nbsp;</p>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="gruss">
+            {{ anschreiben.text[-1] }}<br>            
+        </div>
+    </div>
