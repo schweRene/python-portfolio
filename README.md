@@ -4,4 +4,10 @@ Files: Stundenerfassung.py
 Libraries: Datetime, calendar
 
 Author: René
- 
+
+# Bewerbungs-Homepage
+This is a python project
+Files:
+Libaries: python, Flask, CSS, HTML, Vercel
+
+Author: René
