@@ -6,7 +6,7 @@ Libraries: Datetime, calendar
 Author: René
 
 # Bewerbungs-Homepage
-This is a python project
+This is python project
 Files:
 Libaries: python, Flask, CSS, HTML, Vercel
 
