@@ -1,0 +1,767 @@
+/* ======================================================
+   GLOBAL BASICS
+====================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100%;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ======================================================
+   NAVBAR (GLOBAL)
+====================================================== */
+
+.nav-bar {
+    background: #2c3e50;
+    color: white;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.nav-bar a:hover {
+    color: #00BFFF;
+}
+
+.nav-bar a.active {
+    color: #e74c3c;
+    border-bottom: 3px solid #e74c3c;
+    padding-bottom: 5px;
+}
+
+@media print {
+    .nav-bar {
+        display: none;
+    }
+}
+
+/* ======================================================
+   INDEX / STARTSEITE
+====================================================== */
+
+.page-index {
+    background: linear-gradient(135deg, #f5f5fa 0%, #c3cfe2 100%);
+}
+
+.page-index header {
+    background: rgba(44, 62, 80, 0.9);
+    color: white;
+    padding: 80px 20px 60px;
+    text-align: center;
+}
+
+.page-index .hero h1 {
+    font-size: 42px;
+}
+
+.page-index .hero p {
+    font-size: 22px;
+    opacity: 0.9;
+}
+
+.page-index .index-foto{
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+} 
+
+.page-index .cards-container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.page-index .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.page-index .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .page-index .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .page-index .card-header {
+            background: #27ae60;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .page-index .card-body {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .page-index .card-body p{
+            margin: 0 0 25px 0;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .page-index .btn {
+            display: inline-block;
+            background: #2c3e80;
+            color: white;
+            /*margin-top: 5px;*/
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+            justify-content: center;
+            
+        }
+
+        .btn:hover {
+            background: #1a252f;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #2c3e80;
+            color: white;
+            font-size: 14px;
+            margin-top: 60px;
+        }
+
+@media (max-width: 900px) {
+    .page-index .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ======================================================
+   LEBENSLAUF – DESIGN (aus style.css übernommen)
+====================================================== */
+
+.page-lebenslauf .container {
+    max-width: 210mm;
+    margin: 160px auto 40px;
+    padding: 40px;
+    background: white;
+    box-shadow: 0 0 30px rgba(0,0,0,0.15);
+}
+
+/* ==================== OBERES DRITTEL ==================== */
+
+.page-lebenslauf .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border-bottom: 4px solid #2c3e50;
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+}
+
+.page-lebenslauf .info h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-top: 20px;
+}
+
+.page-lebenslauf .contact {
+    color: #555;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.page-lebenslauf .contact a {
+    color: #2c3e50;
+    text-decoration: none;
+    border-bottom: 1px solid #e74c3c;
+}
+
+.page-lebenslauf .contact a:hover {
+    color: #e74c3c;
+    border-bottom: 2px solid #e74c3c;
+}
+
+.page-lebenslauf .foto img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    padding-right: 2px;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.page-lebenslauf .softskills {
+    background: #ecf0f1;
+    padding: 20px;
+    border-radius: 12px;
+    margin-right: 30px;
+    padding-right: 175px;
+    align-self: flex-start;
+}
+
+.page-lebenslauf .softskills h3 {
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.page-lebenslauf .softskills-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    columns: 3;
+    column-gap: 20px;
+    font-size: 15px;
+}
+
+.page-lebenslauf .softskills-grid li {
+    padding: 6px 0;
+    break-inside: avoid;
+}
+
+/* ==================== HAUPTINHALT ==================== */
+
+.page-lebenslauf .content {
+    margin-left: 0;
+}
+
+.page-lebenslauf .content h2 {
+    margin: 35px 0 12px 0;
+    color: #2c3e50;
+    font-size: 22px;
+}
+
+/* Tabellen allgemein */
+
+.page-lebenslauf .cv-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.page-lebenslauf .cv-table td {
+    padding: 10px 0;
+    vertical-align: top;
+}
+
+.page-lebenslauf .zeit {
+    width: 150px;
+    font-weight: 500;
+    color: #2c3e50;
+    white-space: nowrap;
+    padding-right: 150px; /* WICHTIG: Abstand Zeit ↔ Inhalt */
+}
+
+.page-lebenslauf .position {
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+.page-lebenslauf .firma {
+    color: #555;
+    font-size: 16px;
+    display: block;
+    margin-top: 2px;
+}
+
+/* Aufgaben */
+
+.page-lebenslauf .aufgaben {
+    margin: 8px 0 0 0;
+    padding-left: 20px;
+    list-style: disc;
+    color: #444;
+}
+
+.page-lebenslauf .aufgaben li {
+    margin-bottom: 6px;
+    line-height: 1.5;
+    padding-left: 5px;
+}
+
+/* Zertifikate */
+
+.page-lebenslauf .zertifikate {
+    margin-left: 0;
+    margin-top: 5px;
+    padding-left: 25px;
+    list-style: disc;
+    column-gap: 50px;
+}
+
+/* ==================== UNTERSCHRIFT ==================== */
+
+.page-lebenslauf .ort-datum {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.page-lebenslauf .linie {
+    border-top: 2px solid #333;
+    width: 185px;
+    margin-top: 8px;
+}
+
+.page-lebenslauf .name {
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+
+/* ======================================================
+   ANSCHREIBEN
+====================================================== */
+
+.page-anschreiben {
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    padding-top: 120px;
+}
+
+.page-anschreiben .anschreiben-container {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm;
+    background: white;
+    box-shadow: 0 0 30px rgba(0,0,0,0.2);
+    font-size: 11pt;
+}
+
+.page-anschreiben .text p {
+    margin-bottom: 10pt;
+    text-align: justify;
+}
+
+.page-anschreiben .ort-datum {
+            text-align: right;
+            margin-bottom: 15pt;
+}
+
+.page-anschreiben .absender {
+            margin-bottom: 40pt;
+        }
+
+.page-anschreiben .empfaenger {
+    margin-bottom: 30pt;
+}
+
+.betreff {
+            font-weight: bold;
+            font-size: 12pt;
+            margin-bottom: 15pt;
+        }
+
+        .anrede {
+            margin-bottom: 15pt;
+        }
+
+@media (max-width: 768px) {
+    .page-anschreiben .anschreiben-container {
+        width: 100%;
+        padding: 16px;
+    }
+}
+
+/* ======================================================
+   DECKBLATT
+====================================================== */
+
+.page-deckblatt {
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    padding-top: 120px;
+}
+
+.page-deckblatt .deckblatt-container {
+    width: 210mm;
+    height: 297mm;
+    background: white;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+/* Grüner Rand */
+.page-deckblatt .farbrand {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 45mm;
+    height: 100%;
+    background: #27ae60;
+}
+
+/* Hauptinhalt */
+.page-deckblatt .deckblatt-content {
+    margin-left: 45mm;
+    height: 100%;
+    padding: 180px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Foto */
+.page-deckblatt .deckblatt-foto {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+/* Titel */
+.page-deckblatt .deckblatt-titel {
+    text-align: center;
+    font-size: 36px;
+    line-height: 1.3;
+    color: #2c3e50;
+}
+
+/* Anlagen */
+.page-deckblatt .anhaenge {
+    position: absolute;
+    bottom: 40px;
+    left: 45mm;
+    padding-left: 40px;
+}
+
+.page-deckblatt .anhaenge h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+.page-deckblatt .anhaenge ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.page-deckblatt .anhaenge li {
+    padding: 8px 0;
+    font-size: 18px;
+}
+
+.page-deckblatt .anhaenge li::before{
+    
+    color: #27ae60;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .page-deckblatt .deckblatt-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .page-deckblatt .farbrand {
+        width: 20px;
+    }
+
+    .page-deckblatt .deckblatt-content {
+        margin-left: 20px;
+    }
+}
+
+
+/* ======================================================
+   PRINT OPTIMIERUNG (GLOBAL)
+====================================================== */
+
+@media print {
+    body {
+        background: white !important;
+    }
+
+    .container,
+    .anschreiben-container,
+    .deckblatt-container {
+        box-shadow: none !important;
+        margin: 0 !important;
+    }
+}
+
+
+/* ======================================================
+   MOBILE – GLOBAL
+====================================================== */
+
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    /* Seitencontainer */
+    .container {
+        width: 100%;
+        margin: 120px 0 30px;
+        padding: 20px;
+        box-shadow: none;
+    }
+
+    /* Navigation */
+    .nav-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .nav-bar a {
+        font-size: 15px;
+    }
+}
+
+/* ======================================================
+   MOBILE – LEBENSLAUF
+====================================================== */
+@media (max-width: 768px) {
+    .page-lebenslauf .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .page-lebenslauf .info {
+        order: 1;
+    }
+
+    .page-lebenslauf .foto {
+        order: 2;
+        margin: 20px 0;
+    }
+
+    .page-lebenslauf .foto img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .page-lebenslauf .softskills {
+        order: 3;
+        margin: 20px 0 0;
+        padding-right: 20px;
+        width: 100%;
+    }
+
+    .page-lebenslauf .softskills-grid {
+        columns: 1;
+        column-gap: 0;
+    }
+
+    .page-lebenslauf .softskills-grid li {
+        padding: 8px 0;
+        font-size: 15px;
+    }
+
+    /* Tabellen stapeln */
+    .page-lebenslauf .cv-table,
+    .page-lebenslauf .cv-table tr,
+    .page-lebenslauf .cv-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .page-lebenslauf .zeit {
+        padding-right: 0;
+        margin-bottom: 4px;
+        font-weight: 600;
+    }
+
+    .page-lebenslauf .firma {
+        margin-bottom: 6px;
+    }
+}
+
+/* ======================================================
+   MOBILE – ANSCHREIBEN
+====================================================== */
+@media (max-width: 768px) {
+    .anschreiben-container {
+        padding: 20px;
+    }
+
+    .absender,
+    .empfaenger {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .text p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+}
+
+/* ======================================================
+   MOBILE – DECKBLATT
+====================================================== */
+
+@media (max-width: 768px){
+    .deckblatt-container {
+        padding: 30px 20px;
+    }
+
+    .deckblatt-container img {
+        width: 160px;
+        height: 160px;
+        margin-bottom: 30px;
+    }
+
+    .deckblatt-titel {
+        font-size: 26px;
+        text-align: center;
+    }
+}
+
+/* ======================================================
+   PRINT – GLOBAL
+====================================================== */
+
+@media print {
+    /* Browser-Ränder entfernen */
+    @page {
+        size: A4;
+        margin: 20mm;
+    }
+
+    body {
+        background: white;
+        font-size: 12pt;
+        color: black;
+    }
+
+    /* Navigation ausblenden */
+    .nav-bar {
+        display: none !important;
+    }
+
+    /* Schatten & Effekte entfernen */
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+    }    
+}
+
+/* ======================================================
+   PRINT – LEBENSLAUF
+====================================================== */
+
+@media print {
+
+    .page-lebenslauf .container {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .page-lebenslauf .header {
+        page-break-after: avoid;
+    }
+
+    .page-lebenslauf section {
+        page-break-inside: avoid;
+    }
+
+    .page-lebenslauf h2 {
+        margin-top: 20px;
+        font-size: 16pt;
+    }
+
+    .page-lebenslauf .zeit {
+        padding-right: 40px;
+        font-size: 11pt;
+    }
+
+    .page-lebenslauf .aufgaben li {
+        font-size: 11pt;
+    }
+}
+
+/* ======================================================
+   PRINT – ANSCHREIBEN
+====================================================== */
+
+@media print {
+    .anschreiben-container {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .anschreiben-container p {
+        font-size: 12pt;
+        line-height: 1.6;
+    }
+
+    .anschreiben-container section {
+        page-break-inside: avoid;
+    }
+}
+
+/* ======================================================
+   PRINT – DECKBLATT
+====================================================== */
+
+@media print {
+    .deckblatt-container {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+    .deckblatt-container img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .deckblatt-titel {
+        font-size: 28pt;
+    }
+}
