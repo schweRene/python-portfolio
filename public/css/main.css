@@ -20,7 +20,7 @@ html, body {
 ====================================================== */
 
 .nav-bar {
-    background: #2c3e50;
+    background: #385673;
     color: white;
     padding: 14px 20px;
     display: flex;
@@ -41,7 +41,7 @@ html, body {
 }
 
 .nav-bar a:hover {
-    color: #00BFFF;
+    color: #daecf2;
 }
 
 .nav-bar a.active {
@@ -61,7 +61,7 @@ html, body {
 ====================================================== */
 
 .page-index {
-    background: linear-gradient(135deg, #f5f5fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #f5f5fa 0%, #ced8ea 100%);
 }
 
 .page-index header {
@@ -81,8 +81,8 @@ html, body {
 }
 
 .page-index .index-foto{
-    width: 180px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
     object-fit: cover;
     border-radius: 50%;
     margin-top: 40px;
@@ -116,7 +116,7 @@ html, body {
         }
 
         .page-index .card-header {
-            background: #27ae60;
+            background: #1f2fd8;
             color: white;
             padding: 25px;
             text-align: center;
@@ -137,7 +137,7 @@ html, body {
 
         .page-index .btn {
             display: inline-block;
-            background: #2c3e80;
+            background: #305af1;
             color: white;
             /*margin-top: 5px;*/
             padding: 12px 30px;
@@ -150,7 +150,7 @@ html, body {
         }
 
         .btn:hover {
-            background: #1a252f;
+            background: #aed0f0;
         }
 
         footer {
@@ -169,7 +169,7 @@ html, body {
 }
 
 /* ======================================================
-   LEBENSLAUF – DESIGN (aus style.css übernommen)
+   LEBENSLAUF – DESIGN 
 ====================================================== */
 
 .page-lebenslauf .container {
@@ -425,7 +425,7 @@ html, body {
     top: 0;
     width: 45mm;
     height: 100%;
-    background: #27ae60;
+    background: #3265d2;
 }
 
 /* Hauptinhalt */
@@ -440,8 +440,8 @@ html, body {
 
 /* Foto */
 .page-deckblatt .deckblatt-foto {
-    width: 180px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
     object-fit: cover;
     border-radius: 50%;
     margin-top: 40px;
@@ -557,6 +557,13 @@ html, body {
    MOBILE – LEBENSLAUF
 ====================================================== */
 @media (max-width: 768px) {
+
+    .page-lebenslauf .container {
+        margin: 100px auto 30px !important;
+        padding: 20px;
+        box-shadow: none;
+    }
+
     .page-lebenslauf .header {
         flex-direction: column;
         align-items: center;
@@ -614,43 +621,101 @@ html, body {
 }
 
 /* ======================================================
-   MOBILE – ANSCHREIBEN
+   MOBILE – ANSCHREIBEN 
 ====================================================== */
 @media (max-width: 768px) {
-    .anschreiben-container {
-        padding: 20px;
+    /* Stark erhöhter äußerer Abstand – das ist der Schlüssel */
+    .page-anschreiben {
+        padding-top: 80px !important;          
     }
 
-    .absender,
-    .empfaenger {
+    /* Inneres Padding reduzieren, damit der Absender nicht unnötig tief im Blatt startet */
+    .page-anschreiben .anschreiben-container {
         width: 100%;
-        margin-bottom: 20px;
+        min-height: auto;
+        padding: 20px 20px 60px !important;  
+        margin: 0 auto;
+        background: white;
+        box-shadow: none;
     }
 
-    .text p {
+    .absender {
+        margin-bottom: 40px;
         font-size: 15px;
         line-height: 1.6;
     }
-}
 
-/* ======================================================
-   MOBILE – DECKBLATT
-====================================================== */
-
-@media (max-width: 768px){
-    .deckblatt-container {
-        padding: 30px 20px;
+    .empfaenger {
+        margin-bottom: 35px;
     }
 
-    .deckblatt-container img {
-        width: 160px;
-        height: 160px;
-        margin-bottom: 30px;
+    .betreff {
+        margin-bottom: 25px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .text p {
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 14pt;
+    }
+}
+
+/* =====================================================
+   MOBILE – DECKBLATT (FINAL)
+===================================================== */
+@media (max-width: 768px) {
+
+    /* Schritt 1: Globalen Offset killen */
+    body,
+    main,
+    .page-deckblatt {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    /* Schritt 2: Layout reset */
+    .deckblatt-container {
+        display: block !important;
+        position: relative !important;
+        margin: 0 !important;
+        padding: 4px 16px 70px !important;
+        height: auto !important;
+        overflow: visible !important;
+        text-align: center;
+    }
+
+    .deckblatt-content,
+    .anhaenge {
+        position: static !important;
+        transform: none !important;
+        right: auto !important;
+        left: auto !important;
+        top: auto !important;
+        margin-top: -80px;
+        display: block;
+    }
+
+    /* Schritt 3: Reihenfolge */
+    .deckblatt-foto {
+        margin: -200px auto 12px;
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
     }
 
     .deckblatt-titel {
-        font-size: 26px;
-        text-align: center;
+        margin: 0 0 16px;
+    }
+
+    .anhaenge {
+        margin-top: -40px;
+        max-width: none;
+        text-align: left;
+        font-size: 15px;
+        padding-left: 18px;
+        padding-bottom: 32px;
     }
 }
 
@@ -764,4 +829,16 @@ html, body {
     .deckblatt-titel {
         font-size: 28pt;
     }
+}
+
+@media (max-width: 768px) {
+
+    /* 🔥 GLOBALEN OFFSET KILLEN */
+    body,
+    main,
+    .page-deckblatt {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
 }

@@ -6,7 +6,7 @@
     <title>René Schwemer - Junior Softwareentwickler</title>
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='rene.png') }}" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     <style>
         body {
             margin: 0;
@@ -129,10 +129,10 @@
         }
     </style>
 </head>
-<body>
+<body class="page-index">
     <header>
-        <div class="hero">
-            <img src="{{ url_for('static', filename='Bewerbungsfoto2.jpg') }}" alte="René Schwemer" class="profile-photo">
+        <div class="header">
+            <img src="{{ url_for('static', filename='rene.png') }}" alte="René Schwemer" class="profile-photo">
             <h1>René Schwemer</h1>
             <p>Junior Softwareentwickler</p>
         </div>
@@ -176,7 +176,7 @@
 
     <footer>
        © 2026 René Schwemer - Junior Softwareentwickler | Hamburg 
-       <p>Auf Anfrage teile ich Ihnen gerne die Zugangsdaten für meine Arbeitszeugnisse und Zertifikate mit.</p>
+       <p>Auf Anfrage teile ich Ihnen gerne die Zugangsdaten für meine Arbeitszeugnisse und Zertifikate mit.<br></p>
        <a href="{{ url_for('static', filename='zeugnisse/Zeugnisse.pdf') }}" target="_blank" class="btn">Arbeitszeugnisse</a>
     </footer>
 </body>
